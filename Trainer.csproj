@@ -1,0 +1,73 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+    <RootNamespace>RVTrainer</RootNamespace>
+    <AssemblyName>RV_Trainer</AssemblyName>
+    <AssemblyName>RV_Trainer</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+
+    <PublishAot>true</PublishAot>
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <IlcOptimizationPreference>Speed</IlcOptimizationPreference>
+    <IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <AvaloniaEnableInputPane>false</AvaloniaEnableInputPane>
+
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <Deterministic>true</Deterministic>
+
+    <AssemblyTitle>RV: There Yet? Trainer</AssemblyTitle>
+    <AssemblyDescription>RV: There Yet? Trainer maded with love by NeonPhantom</AssemblyDescription>
+    <AssemblyProduct>RV: There Yet? Trainer</AssemblyProduct>
+    <AssemblyCopyright>Copyright © NeonPhantom</AssemblyCopyright>
+    <AssemblyVersion>2.0</AssemblyVersion>
+    <FileVersion>2.0</FileVersion>
+    <ComVisible>false</ComVisible>
+    <Guid>7d7e89fc-4c2c-4727-8d9f-80748ba563af</Guid>
+    
+
+    <StripSymbols>true</StripSymbols>
+    <IlcGenerateDgmlFile>false</IlcGenerateDgmlFile>
+    <IlcGenerateMapFile>false</IlcGenerateMapFile>
+
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>partial</TrimMode>
+    <SuppressTrimAnalysisWarnings>true</SuppressTrimAnalysisWarnings>
+    <TrimmerRemoveSymbols>false</TrimmerRemoveSymbols>
+
+    <IlcOptimizationPreference>Size</IlcOptimizationPreference>
+    <IlcInstructionSet></IlcInstructionSet>
+    <EventSourceSupport>false</EventSourceSupport>
+    <EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>
+    <HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>
+    <MetadataUpdaterSupport>false</MetadataUpdaterSupport>
+    <UseSystemResourceKeys>true</UseSystemResourceKeys>
+    <UseWindowsForms>False</UseWindowsForms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Management" Version="8.0.0" />
+    <PackageReference Include="Avalonia" Version="11.1.3" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.1.3" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.1.3" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.1.3" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.WindowsDesktop.App" />
+  </ItemGroup>
+
+</Project>

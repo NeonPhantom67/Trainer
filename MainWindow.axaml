@@ -1,0 +1,164 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="700"
+        x:Class="RVTrainer.MainWindow"
+        Title="RV: There Yet? Trainer v1.0"
+        Width="600" Height="700"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen"
+        Background="#0d1117">
+
+    <Window.Styles>
+        <!-- Header Styles -->
+        <Style Selector="Border.header">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+                        <GradientStop Color="#1a1f2e" Offset="0"/>
+                        <GradientStop Color="#0d1117" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderBrush" Value="#30363d"/>
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+            <Setter Property="Padding" Value="24,20"/>
+            <Setter Property="Margin" Value="0"/>
+        </Style>
+        
+        <!-- Category Card Styles -->
+        <Style Selector="Border.category">
+            <Setter Property="Background" Value="#161b22"/>
+            <Setter Property="BorderBrush" Value="#30363d"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="16,12"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+        </Style>
+        <Style Selector="Border.category:pointerover">
+            <Setter Property="Background" Value="#1c2128"/>
+            <Setter Property="BorderBrush" Value="#58a6ff"/>
+        </Style>
+        
+        <!-- Title Styles -->
+        <Style Selector="TextBlock.title">
+            <Setter Property="Foreground" Value="#e6edf3"/>
+            <Setter Property="FontSize" Value="26"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+        <Style Selector="TextBlock.subtitle">
+            <Setter Property="Foreground" Value="#7d8590"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Regular"/>
+        </Style>
+        <Style Selector="TextBlock.category-title">
+            <Setter Property="Foreground" Value="#58a6ff"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="LetterSpacing" Value="0.5"/>
+        </Style>
+        
+        <!-- CheckBox Styles -->
+        <Style Selector="CheckBox">
+            <Setter Property="Foreground" Value="#c9d1d9"/>
+            <Setter Property="Margin" Value="0,3"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+        <Style Selector="CheckBox /template/ Border#NormalRectangle">
+            <Setter Property="BorderBrush" Value="#484f58"/>
+            <Setter Property="Background" Value="#0d1117"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="CheckBox:pointerover /template/ Border#NormalRectangle">
+            <Setter Property="BorderBrush" Value="#58a6ff"/>
+        </Style>
+        <Style Selector="CheckBox:checked /template/ Border#NormalRectangle">
+            <Setter Property="Background" Value="#1f6feb"/>
+            <Setter Property="BorderBrush" Value="#1f6feb"/>
+        </Style>
+        <Style Selector="CheckBox:checked /template/ Path#CheckGlyph">
+            <Setter Property="Fill" Value="#ffffff"/>
+            <Setter Property="Stroke" Value="#ffffff"/>
+            <Setter Property="StrokeThickness" Value="2"/>
+        </Style>
+        
+        <!-- Slider Styles -->
+        <Style Selector="Slider">
+            <Setter Property="Foreground" Value="#58a6ff"/>
+            <Setter Property="Margin" Value="0,4"/>
+        </Style>
+        <Style Selector="Slider /template/ Thumb">
+            <Setter Property="Background" Value="#58a6ff"/>
+        </Style>
+        <Style Selector="Slider:pointerover /template/ Thumb">
+            <Setter Property="Background" Value="#79c0ff"/>
+        </Style>
+        
+        <!-- TextBox Styles -->
+        <Style Selector="TextBox">
+            <Setter Property="Foreground" Value="#c9d1d9"/>
+            <Setter Property="Background" Value="#0d1117"/>
+            <Setter Property="BorderBrush" Value="#30363d"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="8,6"/>
+            <Setter Property="Margin" Value="8,0,0,0"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        <Style Selector="TextBox:focus">
+            <Setter Property="BorderBrush" Value="#1f6feb"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+        </Style>
+        <Style Selector="TextBox:pointerover">
+            <Setter Property="BorderBrush" Value="#58a6ff"/>
+        </Style>
+        
+        <!-- ScrollViewer Styles -->
+        <Style Selector="ScrollViewer">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="ScrollBar">
+            <Setter Property="Background" Value="#0d1117"/>
+        </Style>
+        <Style Selector="ScrollBar:vertical /template/ Thumb">
+            <Setter Property="Background" Value="#30363d"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="ScrollBar:vertical:pointerover /template/ Thumb">
+            <Setter Property="Background" Value="#484f58"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto,*">
+        <!-- Header -->
+        <Border Classes="header" Grid.Row="0">
+            <StackPanel>
+                <TextBlock Classes="title" Text="RV: There Yet? Trainer"/>
+                <TextBlock Classes="subtitle" Text="Version 1.0 • Crafted by NeonPhantom" Margin="0,6,0,0"/>
+                <Border Height="1" Margin="0,14,0,14" Background="#30363d" Opacity="0.6"/>
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <Border Background="#1f6feb" CornerRadius="3" Padding="6,2">
+                        <TextBlock Text="●" Foreground="#ffffff" FontSize="10" VerticalAlignment="Center"/>
+                    </Border>
+                    <TextBlock x:Name="StatusText" 
+                               Text="Waiting for game..." 
+                               Foreground="#7d8590" 
+                               FontSize="13"
+                               FontWeight="Medium"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- Scrollable Cheats Panel -->
+        <ScrollViewer Grid.Row="1" 
+                      HorizontalScrollBarVisibility="Disabled"
+                      VerticalScrollBarVisibility="Auto"
+                      Padding="16,16,16,16">
+            <StackPanel x:Name="CheatsPanel" Spacing="0"/>
+        </ScrollViewer>
+    </Grid>
+</Window>
